@@ -9,10 +9,6 @@ Plug 'tomasr/molokai'
 let g:molokai_original = 1
 let g:rehash256 = 1
 
-" Feature
-Plug 'majutsushi/tagbar'
-let g:tagbar_show_linenumbers = 1
-
 " Autocomplete
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -20,14 +16,6 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim'
 let g:deoplete#enable_at_startup = 1
-Plug  'scrooloose/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Hotkey
 Plug 'vim-scripts/auto-pairs'
@@ -37,11 +25,6 @@ Plug 'ervandew/supertab'
 let SuperTabMappingForward="<S-Tab>"
 Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_smartcase = 1
-
-" Python
-Plug 'hdima/python-syntax',{'for': ['python']}
-let python_highlight_all = 1
-Plug 'zchee/deoplete-jedi',{'for': ['python']}
 
 call plug#end()
 
@@ -58,7 +41,6 @@ nmap \       zR
 nmap <C-a>   ggVG
 nmap <C-k>   H<Plug>(easymotion-w)
 nmap <C-l>   :nohl<CR>
-nmap <C-t>   :TagbarToggle<CR><C-w>l
 nmap <C-y>   :set paste!<CR>
 nmap <C-5>   :set fileencoding=big5<CR>
 nmap <C-8>   :set fileencoding=utf8<CR>

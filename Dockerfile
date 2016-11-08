@@ -24,7 +24,7 @@ RUN add-apt-repository --yes ppa:neovim-ppa/unstable \
    python3-pip \
    tmux \
    wget \
-&& apt-get clean
+&& apt-fast clean
 
 # pip
 RUN pip2 install --upgrade pip \
