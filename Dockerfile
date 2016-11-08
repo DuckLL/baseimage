@@ -8,7 +8,7 @@ ENV LC_ALL en_US.UTF-8
 CMD ["/sbin/my_init"]
 
 # apt-fast
-RUN add-apt-repository --yes ppa:apt-fast/stable \
+RUN add-apt-repository --yes ppa:saiarcot895/myppa \
 && apt-get update \
 && apt-get -y install apt-fast
 
