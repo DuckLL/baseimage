@@ -15,8 +15,8 @@ RUN add-apt-repository --yes ppa:saiarcot895/myppa \
 # apt-get
 RUN add-apt-repository --yes ppa:neovim-ppa/unstable \
 && apt-fast update \
-&& apt-fast upgrade -y \
-&& apt-fast install -yq \
+&& apt-fast -y upgrade \
+&& apt-fast -y install \
    bash-completion \
    git \
    neovim \
