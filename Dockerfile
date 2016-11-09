@@ -47,4 +47,4 @@ RUN git clone https://github.com/DuckLL/baseimage.git --depth 1 ~/conf \
 
 # vim plugin
 RUN curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
-&& nvim +PlugInstall +q +UpdateRemotePlugins +q
+&& nvim +PlugInstall +q +q

@@ -12,7 +12,7 @@ let g:rehash256 = 1
 
 " Feature
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'Shougo/denite.nvim'
+Plug 'Shougo/denite.nvim', {'do' : ':UpdateRemotePlugins'}
 nmap <C-p> :Denite file_rec<cr>
 nmap <C-/> :Denite grep:.<cr>
 Plug 'majutsushi/tagbar'
@@ -23,7 +23,7 @@ nmap <C-t> :TagbarToggle<CR><C-w>l
 Plug 'SirVer/ultisnips'
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 Plug 'honza/vim-snippets'
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', {'do' : ':UpdateRemotePlugins'}
 let g:deoplete#enable_at_startup = 1
 Plug  'scrooloose/syntastic'
 set statusline+=%#warningmsg#
