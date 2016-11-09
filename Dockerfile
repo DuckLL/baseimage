@@ -26,6 +26,7 @@ RUN add-apt-repository --yes ppa:neovim-ppa/unstable \
    python3-pip \
    tmux \
    wget \
+   xsel \
 && apt-fast clean
 
 # pip
