@@ -4,6 +4,8 @@ MAINTAINER DuckLL <a347liao@gmail.com>
 
 ENV TERM screen-256color
 ENV LC_ALL en_US.UTF-8
+ENV HOME ~
+ENV XDG_CONFIG_HOME ~/.config
 
 CMD ["/sbin/my_init"]
 
