@@ -13,11 +13,8 @@ let g:rehash256 = 1
 " Feature
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/denite.nvim', {'do' : ':UpdateRemotePlugins'}
-nmap <C-p> :Denite file_rec<cr>
-nmap <C-/> :Denite grep:.<cr>
 Plug 'majutsushi/tagbar'
 let g:tagbar_show_linenumbers = 1
-nmap <C-t> :TagbarToggle<CR><C-w>l
 
 " Autocomplete
 Plug 'SirVer/ultisnips'
@@ -45,11 +42,6 @@ Plug 'ervandew/supertab'
 let SuperTabMappingForward="<S-Tab>"
 Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_smartcase = 1
-map  n     <Plug>(easymotion-next)
-map  N     <Plug>(easymotion-prev)
-map  /     <Plug>(easymotion-sn)
-omap /     <Plug>(easymotion-tn)
-nmap <C-k> H<Plug>(easymotion-w)
 
 " CSS
 Plug 'gko/vim-coloresque',{'for': ['html','*ss','vue','javascript','markdown']}
@@ -75,11 +67,19 @@ call plug#end()
 filetype plugin indent on
 
 " Hotkey
+map  /       <Plug>(easymotion-sn)
+omap /       <Plug>(easymotion-tn)
 nmap ;       :
 vmap ;       :
 nmap \       zR
+map  n       <Plug>(easymotion-next)
+map  N       <Plug>(easymotion-prev)
+nmap <C-/>   :Denite grep:.<cr>
 nmap <C-a>   ggVG
+nmap <C-k>   H<Plug>(easymotion-w)
 nmap <C-l>   :nohl<CR>
+nmap <C-p>   :Denite file_rec<cr>
+nmap <C-t>   :TagbarToggle<CR><C-w>l
 nmap <C-y>   :set paste!<CR>
 nmap <C-5>   :set fileencoding=big5<CR>
 nmap <C-8>   :set fileencoding=utf8<CR>
