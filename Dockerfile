@@ -1,4 +1,4 @@
-FROM phusion/baseimage:latest
+FROM phusion/baseimage
 
 MAINTAINER DuckLL <a347liao@gmail.com>
 
