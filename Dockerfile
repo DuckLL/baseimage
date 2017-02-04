@@ -13,10 +13,10 @@ CMD ["/sbin/my_init"]
 # apt-fast
 RUN add-apt-repository --yes ppa:saiarcot895/myppa \
 && apt-get update \
-&& apt-get -y install apt-fast
+&& apt-get -y install apt-fast \
 
 # apt-get
-RUN add-apt-repository --yes ppa:neovim-ppa/unstable \
+&& add-apt-repository --yes ppa:neovim-ppa/unstable \
 && apt-fast update \
 && apt-fast -y upgrade \
 && apt-fast -y install \
@@ -28,24 +28,24 @@ RUN add-apt-repository --yes ppa:neovim-ppa/unstable \
    tmux \
    wget \
    xsel \
-&& apt-fast clean
+&& apt-fast clean \
 
 # pip
-RUN pip2 install --upgrade pip \
+&& pip2 install --upgrade pip \
 && pip2 install \
    neovim \
 && pip3 install --upgrade pip \
 && pip3 install \
-   neovim
+   neovim \
 
 # dotfiles
-RUN git clone https://github.com/DuckLL/baseimage.git --depth 1 ~/conf \
+&& git clone https://github.com/DuckLL/baseimage.git --depth 1 ~/conf \
 && cp ~/conf/.tmux.conf ~/.tmux.conf \
 && cp ~/conf/.vimrc ~/.vimrc \
 && mkdir -p ~/.config/nvim \
 && ln -s ~/.vimrc ~/.config/nvim/init.vim \
-&& echo 'alias vim="nvim"' >> ~/.bashrc
+&& echo 'alias vim="nvim"' >> ~/.bashrc \
 
 # vim plugin
-RUN curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
+&& curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 && nvim +PlugInstall +q +q
