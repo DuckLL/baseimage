@@ -16,7 +16,7 @@ RUN add-apt-repository --yes ppa:saiarcot895/myppa \
 && apt-get -y install apt-fast \
 
 # apt-get
-&& add-apt-repository --yes ppa:neovim-ppa/unstable \
+&& add-apt-repository --yes ppa:neovim-ppa/stable \
 && apt-fast update \
 && apt-fast -y upgrade \
 && apt-fast -y install \

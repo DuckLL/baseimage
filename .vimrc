@@ -3,7 +3,6 @@ set nocompatible
 call plug#begin()
 
 " UI
-Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts = 1
 Plug 'tomasr/molokai'
@@ -15,6 +14,13 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Shougo/denite.nvim', {'do' : ':UpdateRemotePlugins'}
 Plug 'majutsushi/tagbar'
 let g:tagbar_show_linenumbers = 1
+Plug 'mbbill/undotree'
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile
+endif
+Plug 'w0rp/ale'
+set statusline+=%{ALEGetStatusLine()}
 
 " Autocomplete
 Plug 'SirVer/ultisnips'
@@ -22,19 +28,9 @@ let g:UltiSnipsJumpForwardTrigger="<Tab>"
 Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim', {'do' : ':UpdateRemotePlugins'}
 let g:deoplete#enable_at_startup = 1
-Plug  'scrooloose/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Hotkey
 Plug 'vim-scripts/auto-pairs'
-Plug 'junegunn/vim-easy-align'
-Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims = 1
 Plug 'michaeljsmith/vim-indent-object'
@@ -43,24 +39,10 @@ let SuperTabMappingForward="<S-Tab>"
 Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_smartcase = 1
 
-" CSS
-Plug 'gko/vim-coloresque',{'for': ['html','*ss','vue','javascript','markdown']}
-
-" Javascript
-Plug 'pangloss/vim-javascript',{'for': ['javascript']}
-
-" Markdown
-Plug 'godlygeek/tabular',{'for': ['markdown']}
-Plug 'plasticboy/vim-markdown',{'for': ['markdown']}
-
 " Python
 Plug 'hdima/python-syntax',{'for': ['python']}
 let python_highlight_all = 1
 Plug 'zchee/deoplete-jedi',{'for': ['python']}
-
-" Vue
-Plug 'posva/vim-vue',{'for': ['vue']}
-Plug 'joukevandermaas/vim-ember-hbs'
 
 call plug#end()
 
