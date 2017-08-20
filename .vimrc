@@ -79,6 +79,7 @@ cab wQ  wq
 cab Set set
 
 " Setting
+let mapleader=" "                      " leader key
 syntax on                              " Color syntax
 color molokai                          " Theme
 set backspace=start,eol,indent         " Backspcae
