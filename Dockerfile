@@ -1,7 +1,5 @@
 FROM phusion/baseimage
 
-MAINTAINER DuckLL <a347liao@gmail.com>
-
 ENV TERM screen-256color
 ENV LC_ALL en_US.UTF-8
 ENV LC_CTYPE en_US.UTF-8
@@ -30,22 +28,7 @@ RUN add-apt-repository --yes ppa:saiarcot895/myppa \
    xsel \
 && apt-fast clean \
 
-# pip
-&& pip2 install --upgrade pip \
-&& pip2 install \
-   neovim \
-&& pip3 install --upgrade pip \
-&& pip3 install \
-   neovim \
-
-# dotfiles
-&& git clone https://github.com/DuckLL/baseimage.git --depth 1 ~/conf \
-&& cp ~/conf/.tmux.conf ~/.tmux.conf \
-&& cp ~/conf/.vimrc ~/.vimrc \
-&& mkdir -p ~/.config/nvim \
-&& ln -s ~/.vimrc ~/.config/nvim/init.vim \
-&& echo 'alias vim="nvim"' >> ~/.bashrc \
-
-# vim plugin
-&& curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
-&& nvim +PlugInstall +q +q
+# setup with dotfile
+&& git clone https://github.com/DuckLL/dotfile.git --depth 1 ~/dotfile \
+&& cd ~/dotfile \
+&& ./linux.sh
