@@ -15,20 +15,27 @@ RUN add-apt-repository --yes ppa:saiarcot895/myppa \
 
 # apt-get
 && add-apt-repository --yes ppa:neovim-ppa/stable \
+&& add-apt-repository --yes ppa:deadsnakes/ppa \
 && apt-fast update \
 && apt-fast -y upgrade \
 && apt-fast -y install \
    bash-completion \
    git \
    neovim \
-   python-pip \
-   python3-pip \
+   python3.7-dev \
    tmux \
    wget \
    xsel \
-&& apt-fast clean \
+
+&& cd /tmp \
+&& wget https://bootstrap.pypa.io/get-pip.py \
+&& python3.7 get-pip.py \
 
 # setup with dotfile
 && git clone https://github.com/DuckLL/dotfile.git --depth 1 ~/dotfile \
 && cd ~/dotfile \
-&& ./linux.sh
+&& ./linux.sh \
+
+# cleanup
+&& apt-fast clean \
+&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
