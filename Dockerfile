@@ -8,17 +8,10 @@ ENV XDG_CONFIG_HOME /root/.config
 
 CMD ["/sbin/my_init"]
 
-# apt-fast
-RUN add-apt-repository --yes ppa:saiarcot895/myppa \
-&& apt-get update \
-&& apt-get -y install apt-fast \
-
-# apt-get
-&& add-apt-repository --yes ppa:neovim-ppa/stable \
-&& add-apt-repository --yes ppa:deadsnakes/ppa \
-&& apt-fast update \
-&& apt-fast -y upgrade \
-&& apt-fast -y install \
+# apt
+RUN apt update \
+&& apt -y upgrade \
+&& apt -y install \
    bash-completion \
    git \
    neovim \
@@ -37,5 +30,5 @@ RUN add-apt-repository --yes ppa:saiarcot895/myppa \
 && ./linux.sh \
 
 # cleanup
-&& apt-fast clean \
+&& apt clean \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
