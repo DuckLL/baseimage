@@ -15,7 +15,7 @@ RUN apt update \
    bash-completion \
    git \
    neovim \
-   python3.7-dev \
+   python3.7-distutils \
    tmux \
    wget \
    xsel \
