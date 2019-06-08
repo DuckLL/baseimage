@@ -9,7 +9,7 @@ ENV XDG_CONFIG_HOME /root/.config
 CMD ["bash"]
 
 # apt
-RUN apt update
+RUN apt update \
 && apt -y upgrade \
 && apt -y install \
    bash-completion \
