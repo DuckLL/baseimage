@@ -1,4 +1,4 @@
-FROM phusion/baseimage
+FROM phusion/baseimage:master-amd64
 
 ENV TERM screen-256color
 ENV LC_ALL en_US.UTF-8
