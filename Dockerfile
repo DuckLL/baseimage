@@ -9,7 +9,8 @@ ENV XDG_CONFIG_HOME /root/.config
 CMD ["/sbin/my_init"]
 
 # apt
-RUN apt update \
+RUN apt-add-repository ppa:neovim-ppa/stable \
+&& apt update \
 && apt -y upgrade \
 && apt -y install \
    bash-completion \
