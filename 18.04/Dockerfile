@@ -15,14 +15,14 @@ RUN apt update \
    bash-completion \
    git \
    neovim \
-   python3.7-distutils \
+   python3-distutils \
    tmux \
    wget \
    xsel \
 
 && cd /tmp \
 && wget https://bootstrap.pypa.io/get-pip.py \
-&& python3.7 get-pip.py \
+&& python3 get-pip.py \
 
 # setup with dotfile
 && git clone https://github.com/DuckLL/dotfile.git --depth 1 ~/dotfile \
