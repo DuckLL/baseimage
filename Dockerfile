@@ -6,6 +6,8 @@ ENV LC_CTYPE en_US.UTF-8
 ENV HOME /root
 ENV XDG_CONFIG_HOME /root/.config
 
+COPY ./sshd_config /etc/ssh/sshd_config
+
 CMD ["/sbin/my_init"]
 
 # apt
@@ -32,4 +34,4 @@ RUN apt-add-repository ppa:neovim-ppa/stable \
 
 # cleanup
 && apt clean \
-&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /etc/service/sshd/down
