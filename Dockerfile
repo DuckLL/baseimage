@@ -26,9 +26,15 @@ RUN apt-add-repository ppa:neovim-ppa/stable \
 && python3 get-pip.py \
 
 # setup with dotfile
-&& git clone https://github.com/DuckLL/dotfile.git --depth 1 ~/dotfile \
-&& cd ~/dotfile \
+&& git clone https://github.com/DuckLL/dotfile.git --depth 1 \
+&& cd dotfile \
 && ./linux.sh \
+
+# set vim
+&& pip3 install pip -U --user \
+&& pip3 install pynvim --user \
+&& curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
+&& nvim +PlugInstall +q +UpdateRemotePlugins +q \
 
 # cleanup
 && apt clean \
